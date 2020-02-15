@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@mobileia/slider": [
+        "dist/mobileia/slider/mobileia-slider",
+        "dist/mobileia/slider"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

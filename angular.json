@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "mia-slider-angular": {
@@ -123,6 +123,50 @@
           }
         }
       }
-    }},
-  "defaultProject": "mia-slider-angular"
+    },
+    "@mobileia/slider": {
+      "projectType": "library",
+      "root": "projects/mobileia/slider",
+      "sourceRoot": "projects/mobileia/slider/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mobileia/slider/tsconfig.lib.json",
+            "project": "projects/mobileia/slider/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mobileia/slider/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mobileia/slider/src/test.ts",
+            "tsConfig": "projects/mobileia/slider/tsconfig.spec.json",
+            "karmaConfig": "projects/mobileia/slider/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mobileia/slider/tsconfig.lib.json",
+              "projects/mobileia/slider/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "mia-slider-angular",
+  "cli": {
+    "analytics": "f8637b18-474f-4603-bd72-797e7cf783f7"
+  }
 }
