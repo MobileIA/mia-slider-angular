@@ -5,3 +5,4 @@
 export * from './lib/slider.service';
 export * from './lib/slider.component';
 export * from './lib/slider.module';
+export * from './lib/entities/slider';
